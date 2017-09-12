@@ -7,6 +7,8 @@ SolDataAssociation uses Object-Relational mapping to associate models with each 
 =======================================================================
 *Initial Setup*
 
+Clone the repo `git clone https://github.com/SolokiAbbas/SolDA`. In the terminal, `bundle install` and make sure `gem 'sqlite3'` is in the Gemfile. 
+
 Make the sql file, for example:
 
 ```
