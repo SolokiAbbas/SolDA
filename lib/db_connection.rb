@@ -2,7 +2,7 @@ require 'sqlite3'
 
 PRINT_QUERIES = ENV['PRINT_QUERIES'] == 'true'
 ROOT_FOLDER = File.join(File.dirname(__FILE__), '..')
-
+# Be sure to edit filenames here
 PARENT_SQL_FILE = File.join(ROOT_FOLDER, 'parent.sql')
 PARENT_DB_FILE = File.join(ROOT_FOLDER, 'parent.db')
 
@@ -16,12 +16,14 @@ class DBConnection
   end
 
   def self.reset
+    # File names here need to be changed too
     commands = [
       "rm '#{PARENT_DB_FILE}'",
       "parent '#{PARENT_SQL_FILE}' | sqlite3 '#{PARENT_DB_FILE}'"
     ]
 
     commands.each { |command| `#{command}` }
+    #Finally edit the filename here
     DBConnection.open(PARENT_DB_FILE)
   end
 
