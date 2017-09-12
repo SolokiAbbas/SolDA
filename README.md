@@ -7,15 +7,26 @@ SolDataAssociation uses Object-Relational mapping to associate models with each 
 =======================================================================
 *Initial Setup*
 
-Clone the repo `git clone https://github.com/SolokiAbbas/SolDA`. In the terminal, `bundle install` and make sure `gem 'sqlite3'` is in the Gemfile. 
+Clone the repo `git clone https://github.com/SolokiAbbas/SolDA`. In the terminal, `bundle install` and make sure `gem 'sqlite3'` is in the Gemfile.
 
-Make the sql file, for example:
+Next, make the sql file by naming it something like `parent.sql`.
+
+Inside the sql file create a table, for example:
 
 ```
 CREATE TABLE parents (
   id INTEGER PRIMARY KEY,
   name VARCHAR(255) NOT NULL
 );
+```
+
+Now, insert values to those files:
+
+```
+INSERT INTO
+  parents (id, name)
+VALUES
+  (1, "Jane & John"), (2, "Jackie & Jimmy");
 ```
 
 After the filling the database with values make the actual database:
@@ -30,6 +41,8 @@ If adding a new database, edit the `lib/db_connection.rb` file lines 6, 7, 20, 2
 PARENT_SQL_FILE = File.join(ROOT_FOLDER, 'parent.sql')
 PARENT_DB_FILE = File.join(ROOT_FOLDER, 'parent.db')
 ```
+
+And:
 
 ```
 def self.reset
