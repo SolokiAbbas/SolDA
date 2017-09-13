@@ -19,7 +19,7 @@ class DBConnection
     # File names here need to be changed too
     commands = [
       "rm '#{PARENT_DB_FILE}'",
-      "parent '#{PARENT_SQL_FILE}' | sqlite3 '#{PARENT_DB_FILE}'"
+      "cat '#{PARENT_SQL_FILE}' | sqlite3 '#{PARENT_DB_FILE}'"
     ]
 
     commands.each { |command| `#{command}` }
