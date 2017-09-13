@@ -1,5 +1,6 @@
 require_relative 'db_connection'
 require 'active_support/inflector'
+require 'byebug'
 
 class AttrAccessorObject
   def self.my_attr_accessor(*names)
@@ -135,12 +136,13 @@ class SolDataAssociation
   end
 
   def delete_current
+    debugger
     current = self.id
     inserting = DBConnection.execute(<<-SQL, current)
       DELETE FROM
         #{self.class.table_name}
       WHERE
-       id = #{self.id}
+       id = ?
     SQL
   end
 
