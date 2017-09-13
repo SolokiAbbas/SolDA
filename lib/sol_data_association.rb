@@ -119,7 +119,6 @@ class SolDataAssociation
        (#{question_marks})
     SQL
     self.id = DBConnection.last_insert_row_id
-
   end
 
   def update
@@ -132,6 +131,16 @@ class SolDataAssociation
         #{col_set}
       WHERE
         id = #{self.id}
+    SQL
+  end
+
+  def delete_current
+    current = self.id
+    inserting = DBConnection.execute(<<-SQL, current)
+      DELETE FROM
+        #{self.class.table_name}
+      WHERE
+       id = #{self.id}
     SQL
   end
 

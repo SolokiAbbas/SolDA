@@ -120,4 +120,6 @@ parent1 = Parent.new
 parent1.id = 3
 parent1.name = "John and Carrie"
 parent1.insert
+or
+parent1.save
 ```
