@@ -136,7 +136,6 @@ class SolDataAssociation
   end
 
   def delete_current
-    debugger
     current = self.id
     inserting = DBConnection.execute(<<-SQL, current)
       DELETE FROM

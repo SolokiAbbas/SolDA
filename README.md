@@ -101,6 +101,7 @@ There is a sample file called `sample.rb` in root directory. In order to run it,
 Database actions for the sample and other databases include the following:
 
 * insert
+* delete_current
 * update
 * save
 * find
@@ -121,5 +122,11 @@ parent1.id = 3
 parent1.name = "John and Carrie"
 parent1.insert
 or
-parent1.save
+parent1.save (to update)
+```
+
+In order to delete the current class from the database use .delete_current. For example:
+
+```
+parent1.delete_current
 ```
