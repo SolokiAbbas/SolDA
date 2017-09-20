@@ -29,6 +29,9 @@ VALUES
   (1, "Jane & John"), (2, "Jackie & Jimmy");
 ```
 
+There are tables already created for this demo and if you would like to use them simply make the database `parent.db` using the `cat` command bellow.
+
+
 After the filling the database with values make the actual database:
 
 ```

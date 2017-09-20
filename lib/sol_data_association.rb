@@ -1,6 +1,5 @@
 require_relative 'db_connection'
 require 'active_support/inflector'
-require 'byebug'
 
 class AttrAccessorObject
   def self.my_attr_accessor(*names)
