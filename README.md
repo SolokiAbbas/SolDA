@@ -13,7 +13,7 @@ Next, make the sql file by naming it something like `parent.sql`.
 
 Inside the sql file create a table, for example:
 
-```
+```sqlite3
 CREATE TABLE parents (
   id INTEGER PRIMARY KEY,
   name VARCHAR(255) NOT NULL
@@ -22,7 +22,7 @@ CREATE TABLE parents (
 
 Now, insert values to those files:
 
-```
+```sqlite3
 INSERT INTO
   parents (id, name)
 VALUES
@@ -40,14 +40,14 @@ After the filling the database with values make the actual database:
 
 If adding a new database, edit the `lib/db_connection.rb` file lines 6, 7, 20, 21, and 25 to reflect the name of the new database name.
 
-```
+```sqlite3
 PARENT_SQL_FILE = File.join(ROOT_FOLDER, 'parent.sql')
 PARENT_DB_FILE = File.join(ROOT_FOLDER, 'parent.db')
 ```
 
 And:
 
-```
+```ruby
 def self.reset
   commands = [
     "rm '#{PARENT_DB_FILE}'",
@@ -70,7 +70,7 @@ Be sure to install required gems like 'sqlite3'.
 
 Make your models and association in a file on your root directory. Be sure to include the following:
 
-```
+```ruby
 require_relative "lib/associatable"
 require_relative "lib/sol_data_association"
 ```
@@ -112,14 +112,14 @@ Database actions for the sample and other databases include the following:
 
 For Example:
 
-```
+```ruby
 Parent.find(1)
 Parent.find(1).children
 ```
 
 In order to update or insert, create and new `Parent` object and either insert or update the table:
 
-```
+```ruby
 parent1 = Parent.new
 parent1.id = 3
 parent1.name = "John and Carrie"
