@@ -13,7 +13,7 @@ Next, make the sql file by naming it something like `parent.sql`.
 
 Inside the sql file create a table, for example:
 
-```sqlite3
+```sql
 CREATE TABLE parents (
   id INTEGER PRIMARY KEY,
   name VARCHAR(255) NOT NULL
@@ -22,7 +22,7 @@ CREATE TABLE parents (
 
 Now, insert values to those files:
 
-```sqlite3
+```sql
 INSERT INTO
   parents (id, name)
 VALUES
@@ -34,13 +34,13 @@ There are tables already created for this demo and if you would like to use them
 
 After the filling the database with values make the actual database:
 
-```ruby
+```sql
   cat parent.sql | sqlite3 parent.db
 ```
 
 If adding a new database, edit the `lib/db_connection.rb` file lines 6, 7, 20, 21, and 25 to reflect the name of the new database name.
 
-```sqlite3
+```sql
 PARENT_SQL_FILE = File.join(ROOT_FOLDER, 'parent.sql')
 PARENT_DB_FILE = File.join(ROOT_FOLDER, 'parent.db')
 ```
