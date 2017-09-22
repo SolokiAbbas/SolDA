@@ -34,8 +34,8 @@ There are tables already created for this demo and if you would like to use them
 
 After the filling the database with values make the actual database:
 
-```
-cat parent.sql | sqlite3 parent.db
+```ruby
+  cat parent.sql | sqlite3 parent.db
 ```
 
 If adding a new database, edit the `lib/db_connection.rb` file lines 6, 7, 20, 21, and 25 to reflect the name of the new database name.
