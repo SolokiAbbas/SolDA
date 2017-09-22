@@ -112,14 +112,14 @@ Database actions for the sample and other databases include the following:
 
 For Example:
 
-```ruby
+```sql
 Parent.find(1)
 Parent.find(1).children
 ```
 
 In order to update or insert, create and new `Parent` object and either insert or update the table:
 
-```ruby
+```sql
 parent1 = Parent.new
 parent1.id = 3
 parent1.name = "John and Carrie"
@@ -130,6 +130,6 @@ parent1.save (to update)
 
 In order to delete the current class from the database use .delete_current. For example:
 
-```
+```sql
 parent1.delete_current
 ```
